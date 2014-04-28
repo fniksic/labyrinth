@@ -5,7 +5,7 @@ MINISAT_LIBDIR = ../MiniSat-ocaml/_build
 all: labyrinth
 
 labyrinth: data.ml labyrinth.ml
-	ocamlopt -I $(MINISAT_LIBDIR) minisat.cmxa -o labyrinth $^
+	ocamlopt -I $(MINISAT_LIBDIR) minisat.cmxa -cclib -lstdc++ -o labyrinth $^
 
 clean:
 	rm -f *.cmi *.cmx *.o labyrinth
